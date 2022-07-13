@@ -8,7 +8,7 @@ using System.Security.Claims;
 
 namespace AspNetCoreAuth0Demo.Controllers
 {
-    public class UserController : Controller
+    public class AccountController : Controller
     {
         public async Task Login(string returnUrl = "/")
         {
