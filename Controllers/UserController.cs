@@ -23,8 +23,6 @@ namespace AspNetCoreAuth0Demo.Controllers
         public async Task Logout()
         {
             var authenticationProperties = new LogoutAuthenticationPropertiesBuilder()
-                // Indicate here where Auth0 should redirect the user after a logout.
-                // Note that the resulting absolute Uri must be whitelisted in 
                 .WithRedirectUri(Url.Action("Index", "Home"))
                 .Build();
 
@@ -41,11 +39,6 @@ namespace AspNetCoreAuth0Demo.Controllers
         });
 
 
-        /// <summary>
-        /// This is just a helper action to enable you to easily see all claims related to a user. It helps when debugging your
-        /// application to see the in claims populated from the Auth0 ID Token
-        /// </summary>
-        /// <returns></returns>
         [Authorize]
         public IActionResult Claims()
         {
